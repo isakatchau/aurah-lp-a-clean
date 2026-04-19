@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AURAH · Marketing que gera resultado, não só presença</title>
+<meta name="description" content="Agência de marketing digital focada em PMEs, varejo e franquias. Gestão de redes sociais e tráfego pago com estratégia, transparência e resultado mensurável." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --orange-900:#8F2E05;
+    --orange-700:#C43F07;
+    --orange-600:#E04A08;
+    --orange-500:#F25A0B;
+    --orange-400:#FF7A2E;
+    --orange-300:#FFA968;
+    --ink:#0F0F0F;
+    --ink-2:#2A2A2A;
+    --ink-3:#5A5A5A;
+    --ink-4:#8A8A8A;
+    --bg:#FAF7F4;
+    --bg-2:#FFFFFF;
+    --border:#EDE7E0;
+    --shadow-sm:0 2px 8px rgba(15,15,15,0.04), 0 1px 2px rgba(15,15,15,0.06);
+    --shadow-md:0 12px 32px rgba(15,15,15,0.08), 0 2px 6px rgba(15,15,15,0.04);
+    --shadow-lg:0 30px 60px rgba(15,15,15,0.12);
+    --radius:18px;
+    --radius-lg:28px;
+    --container:1200px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    font-size:17px;line-height:1.55;color:var(--ink);background:var(--bg);
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  img,svg{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;cursor:pointer;border:none;background:none}
+
+  .container{max-width:var(--container);margin:0 auto;padding:0 24px}
+  .eyebrow{
+    font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--orange-600);
+  }
+  h1,h2,h3,h4{font-family:'Space Grotesk','Inter',sans-serif;letter-spacing:-.02em;line-height:1.08}
+  h1{font-size:clamp(2.5rem,6.2vw,4.8rem);font-weight:700}
+  h2{font-size:clamp(2rem,4.2vw,3.2rem);font-weight:700}
+  h3{font-size:clamp(1.3rem,2.2vw,1.6rem);font-weight:600}
+  p{color:var(--ink-2)}
+
+  /* ---------- NAV ---------- */
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    background:rgba(250,247,244,.82);backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid transparent;transition:border-color .3s;
+  }
+  .nav.scrolled{border-bottom-color:var(--border)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:var(--container);margin:0 auto}
+  .logo{display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.15rem;letter-spacing:-.01em}
+  .logo-mark{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--orange-400),var(--orange-600));display:grid;place-items:center;color:#fff;flex-shrink:0}
+  .logo-mark svg{width:18px;height:18px}
+  .nav-links{display:flex;gap:32px;align-items:center}
+  .nav-links a{font-size:.95rem;color:var(--ink-2);font-weight:500;transition:color .2s}
+  .nav-links a:hover{color:var(--orange-600)}
+  .nav-cta{
+    background:var(--ink);color:#fff;padding:11px 20px;border-radius:999px;
+    font-size:.9rem;font-weight:600;transition:transform .2s,background .2s;
+    display:inline-flex;align-items:center;gap:8px;
+  }
+  .nav-cta:hover{background:var(--orange-600);transform:translateY(-1px)}
+  .nav-cta svg{width:15px;height:15px}
+  .nav-burger{display:none;width:40px;height:40px;border-radius:10px;border:1px solid var(--border);background:#fff;align-items:center;justify-content:center}
+  .nav-burger span{display:block;width:18px;height:2px;background:var(--ink);position:relative}
+  .nav-burger span::before,.nav-burger span::after{content:'';position:absolute;left:0;width:18px;height:2px;background:var(--ink)}
+  .nav-burger span::before{top:-6px}.nav-burger span::after{top:6px}
+  @media (max-width:860px){
+    .nav-links{display:none}
+    .nav-burger{display:flex}
+    .nav-cta{padding:9px 14px}
+    .nav-cta .cta-long{display:none}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;overflow:hidden;
+    padding:150px 0 100px;
+    background:
+      radial-gradient(ellipse at 20% 0%,rgba(255,122,46,.12),transparent 60%),
+      radial-gradient(ellipse at 85% 20%,rgba(242,90,11,.08),transparent 55%),
+      var(--bg);
+  }
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
+  .hero h1 span.accent{
+    background:linear-gradient(120deg,var(--orange-500),var(--orange-400) 60%,var(--orange-600));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero-sub{font-size:1.18rem;color:var(--ink-3);margin:24px 0 36px;max-width:560px;line-height:1.55}
+  .hero-ctas{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;padding:17px 28px;border-radius:999px;
+    font-weight:600;font-size:1rem;transition:transform .2s,box-shadow .2s,background .2s;
+    white-space:nowrap;
+  }
+  .btn-primary{
+    background:linear-gradient(135deg,var(--orange-500),var(--orange-600));
+    color:#fff;box-shadow:0 10px 30px -8px rgba(242,90,11,.55);
+  }
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px -8px rgba(242,90,11,.65)}
+  .btn-primary svg{width:18px;height:18px}
+  .btn-ghost{
+    background:transparent;color:var(--ink);
+    border:1.5px solid var(--ink);
+  }
+  .btn-ghost:hover{background:var(--ink);color:#fff}
+  .hero-trust{margin-top:32px;display:flex;flex-wrap:wrap;gap:8px 24px;color:var(--ink-3);font-size:.92rem}
+  .hero-trust-item{display:inline-flex;align-items:center;gap:8px}
+  .hero-trust-item::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--orange-500)}
+
+  .hero-visual{position:relative;aspect-ratio:1;max-width:480px;margin-left:auto}
+  .hero-card{
+    position:absolute;inset:0;
+    background:linear-gradient(155deg,var(--orange-500) 0%,var(--orange-700) 100%);
+    border-radius:36px;overflow:hidden;
+    box-shadow:0 40px 80px -20px rgba(196,63,7,.45), 0 15px 35px -15px rgba(0,0,0,.2);
+  }
+  .hero-card::before{
+    content:'';position:absolute;inset:0;
+    background:
+      radial-gradient(circle at 30% 20%,rgba(255,200,150,.5),transparent 50%),
+      radial-gradient(circle at 80% 80%,rgba(143,46,5,.5),transparent 55%);
+  }
+  .hero-card-logo{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-58%);
+    width:50%;max-width:220px;
+  }
+  .hero-card-brand{
+    position:absolute;bottom:38px;left:0;right:0;text-align:center;color:#fff;
+    font-family:'Space Grotesk',sans-serif;
+  }
+  .hero-card-brand .name{font-size:clamp(1.6rem,3.2vw,2.2rem);font-weight:700;letter-spacing:.18em}
+  .hero-card-brand .tag{font-size:.9rem;opacity:.85;margin-top:6px;letter-spacing:.02em}
+  .hero-badge{
+    position:absolute;background:#fff;border-radius:16px;padding:14px 18px;
+    box-shadow:var(--shadow-md);display:flex;align-items:center;gap:12px;
+    font-size:.85rem;font-weight:600;
+  }
+  .hero-badge-1{top:10%;left:-32px}
+  .hero-badge-2{bottom:16%;right:-24px}
+  .hero-badge-icon{
+    width:34px;height:34px;border-radius:10px;display:grid;place-items:center;
+    background:linear-gradient(135deg,var(--orange-400),var(--orange-600));color:#fff;
+  }
+  .hero-badge-icon svg{width:16px;height:16px}
+  .hero-badge .sub{display:block;font-size:.72rem;color:var(--ink-4);font-weight:500;margin-top:2px}
+
+  @media (max-width:960px){
+    .hero{padding:130px 0 80px}
+    .hero-grid{grid-template-columns:1fr;gap:48px}
+    .hero-visual{max-width:380px;margin:0 auto}
+    .hero-badge-1{left:-10px}.hero-badge-2{right:-10px}
+  }
+  @media (max-width:480px){
+    .hero{padding:120px 0 60px}
+    .hero-sub{font-size:1.05rem}
+    .hero-badge{padding:10px 14px;font-size:.78rem}
+    .hero-badge-icon{width:28px;height:28px}
+  }
+
+  /* ---------- PLATFORM STRIP ---------- */
+  .strip{
+    padding:36px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+    background:#fff;
+  }
+  .strip-inner{display:flex;align-items:center;gap:48px;flex-wrap:wrap;justify-content:center}
+  .strip-label{font-size:.82rem;color:var(--ink-4);font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+  .strip-logos{display:flex;gap:36px;align-items:center;flex-wrap:wrap;justify-content:center}
+  .strip-logo{
+    font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.95rem;color:var(--ink-2);
+    display:inline-flex;align-items:center;gap:8px;opacity:.75;transition:opacity .2s;
+  }
+  .strip-logo:hover{opacity:1}
+  .strip-logo svg{width:18px;height:18px}
+
+  /* ---------- PAIN ---------- */
+  .pain{padding:110px 0 80px}
+  .pain-inner{max-width:820px}
+  .pain h2{margin:16px 0 24px}
+  .pain h2 .strike{color:var(--ink-4);text-decoration:line-through;text-decoration-thickness:3px;text-decoration-color:var(--orange-500)}
+  .pain p{font-size:1.15rem;color:var(--ink-2);line-height:1.65}
+  .pain p + p{margin-top:16px}
+
+  /* ---------- METHOD ---------- */
+  .method{padding:90px 0;background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+  .section-head{max-width:720px;margin-bottom:56px}
+  .section-head h2{margin:14px 0 16px}
+  .section-head p{font-size:1.1rem;color:var(--ink-3)}
+  .method-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .method-card{
+    position:relative;padding:32px 26px 28px;border-radius:var(--radius);
+    background:var(--bg);border:1px solid var(--border);
+    transition:transform .25s,box-shadow .25s,border-color .25s;
+  }
+  .method-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:transparent}
+  .method-num{
+    font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.82rem;
+    color:var(--orange-600);letter-spacing:.12em;margin-bottom:20px;
+  }
+  .method-card h3{margin-bottom:10px}
+  .method-card p{font-size:.97rem;color:var(--ink-3);line-height:1.55}
+  @media (max-width:860px){.method-grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:520px){.method-grid{grid-template-columns:1fr}}
+
+  /* ---------- SERVICES ---------- */
+  .services{padding:110px 0}
+  .services-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .service-card{
+    position:relative;overflow:hidden;padding:40px;border-radius:var(--radius-lg);
+    background:#fff;border:1px solid var(--border);transition:transform .25s,box-shadow .25s;
+  }
+  .service-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+  .service-card.dark{
+    background:linear-gradient(155deg,#181818,#0a0a0a);color:#fff;border:none;
+  }
+  .service-card.dark p{color:rgba(255,255,255,.72)}
+  .service-card.dark .service-bullet{color:rgba(255,255,255,.82)}
+  .service-card.dark .service-bullet::before{background:var(--orange-400)}
+  .service-card.dark .service-chip{background:rgba(255,255,255,.08);color:rgba(255,255,255,.9);border-color:rgba(255,255,255,.12)}
+  .service-icon{
+    width:54px;height:54px;border-radius:14px;
+    background:linear-gradient(135deg,var(--orange-400),var(--orange-600));
+    display:grid;place-items:center;color:#fff;margin-bottom:22px;
+  }
+  .service-icon svg{width:24px;height:24px}
+  .service-card h3{font-size:1.5rem;margin-bottom:12px}
+  .service-card > p{font-size:1rem;margin-bottom:22px;line-height:1.6}
+  .service-list{list-style:none;margin-bottom:26px}
+  .service-bullet{
+    position:relative;padding-left:24px;font-size:.96rem;color:var(--ink-2);margin-bottom:10px;line-height:1.5;
+  }
+  .service-bullet::before{
+    content:'';position:absolute;left:0;top:.55em;width:12px;height:2px;background:var(--orange-500);
+  }
+  .service-chips{display:flex;gap:8px;flex-wrap:wrap}
+  .service-chip{
+    padding:6px 12px;border-radius:999px;font-size:.8rem;font-weight:500;
+    background:var(--bg);border:1px solid var(--border);color:var(--ink-2);
+  }
+  @media (max-width:860px){.services-grid{grid-template-columns:1fr}.service-card{padding:32px}}
+
+  /* ---------- DIFFERENTIATORS ---------- */
+  .diff{padding:100px 0;background:#fff;border-top:1px solid var(--border)}
+  .diff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 40px}
+  .diff-item{display:flex;gap:16px}
+  .diff-check{
+    flex-shrink:0;width:28px;height:28px;border-radius:50%;
+    background:linear-gradient(135deg,var(--orange-400),var(--orange-600));
+    display:grid;place-items:center;color:#fff;margin-top:2px;
+  }
+  .diff-check svg{width:14px;height:14px}
+  .diff-item h3{font-size:1.1rem;margin-bottom:6px}
+  .diff-item p{font-size:.95rem;color:var(--ink-3);line-height:1.55}
+  @media (max-width:860px){.diff-grid{grid-template-columns:1fr;gap:24px}}
+
+  /* ---------- FOR WHOM ---------- */
+  .forwhom{padding:110px 0}
+  .forwhom-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .forwhom-card{
+    padding:38px 34px;border-radius:var(--radius-lg);border:1px solid var(--border);background:#fff;
+  }
+  .forwhom-card.yes{
+    background:linear-gradient(155deg,#FFF4EC,#FFEADA);
+    border-color:#FCD4B2;
+  }
+  .forwhom-card h3{margin-bottom:22px;display:flex;align-items:center;gap:12px;font-size:1.3rem}
+  .forwhom-icon{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;color:#fff}
+  .forwhom-icon.y{background:linear-gradient(135deg,var(--orange-400),var(--orange-600))}
+  .forwhom-icon.n{background:var(--ink-2)}
+  .forwhom-icon svg{width:16px;height:16px}
+  .forwhom-list{list-style:none}
+  .forwhom-list li{
+    padding:14px 0;border-top:1px solid rgba(0,0,0,.06);
+    font-size:1rem;color:var(--ink-2);line-height:1.55;
+  }
+  .forwhom-list li:first-child{border-top:none;padding-top:0}
+  .forwhom-card.yes .forwhom-list li{border-color:rgba(196,63,7,.15)}
+  @media (max-width:860px){.forwhom-grid{grid-template-columns:1fr}}
+
+  /* ---------- FOUNDER ---------- */
+  .founder{
+    padding:110px 0;
+    background:
+      radial-gradient(circle at 70% 30%,rgba(255,122,46,.1),transparent 50%),
+      #0F0F0F;
+    color:#fff;
+  }
+  .founder-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+  .founder-photo{
+    aspect-ratio:4/5;border-radius:var(--radius-lg);
+    background:
+      radial-gradient(circle at 50% 30%,rgba(255,169,104,.4),transparent 55%),
+      linear-gradient(155deg,var(--orange-600),var(--orange-900));
+    position:relative;overflow:hidden;max-width:420px;
+    box-shadow:var(--shadow-lg);
+  }
+  .founder-photo::after{
+    content:'RA';position:absolute;inset:0;display:grid;place-items:center;
+    font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:7rem;color:rgba(255,255,255,.25);letter-spacing:-.04em;
+  }
+  .founder-name{display:block;margin-top:16px;color:rgba(255,255,255,.7);font-size:.92rem}
+  .founder .eyebrow{color:var(--orange-300)}
+  .founder h2{margin:14px 0 28px;color:#fff}
+  .founder-quote{
+    font-size:1.35rem;line-height:1.5;color:rgba(255,255,255,.92);font-style:italic;
+    padding-left:24px;border-left:3px solid var(--orange-400);
+    margin-bottom:28px;
+  }
+  .founder p{color:rgba(255,255,255,.72);font-size:1.05rem;line-height:1.65}
+  .founder p + p{margin-top:14px}
+  @media (max-width:860px){.founder-grid{grid-template-columns:1fr;gap:40px}.founder-photo{max-width:320px;margin:0 auto}}
+
+  /* ---------- FAQ ---------- */
+  .faq{padding:110px 0;background:#fff;border-top:1px solid var(--border)}
+  .faq-wrap{max-width:820px;margin:0 auto}
+  .faq-wrap .section-head{margin-left:0;margin-right:0;margin-bottom:40px}
+  .faq-item{
+    border-bottom:1px solid var(--border);
+  }
+  .faq-q{
+    width:100%;text-align:left;padding:22px 0;display:flex;justify-content:space-between;align-items:center;gap:24px;
+    font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1.12rem;color:var(--ink);
+    transition:color .2s;
+  }
+  .faq-q:hover{color:var(--orange-600)}
+  .faq-toggle{
+    flex-shrink:0;width:32px;height:32px;border-radius:50%;border:1.5px solid var(--border);
+    display:grid;place-items:center;transition:transform .3s,background .2s,border-color .2s;
+  }
+  .faq-item.open .faq-toggle{background:var(--orange-500);border-color:var(--orange-500);color:#fff;transform:rotate(45deg)}
+  .faq-toggle svg{width:12px;height:12px}
+  .faq-a{
+    max-height:0;overflow:hidden;transition:max-height .35s ease, padding .35s ease;
+    color:var(--ink-3);font-size:1rem;line-height:1.65;
+  }
+  .faq-item.open .faq-a{max-height:400px;padding:0 0 24px 0}
+
+  /* ---------- FINAL CTA ---------- */
+  .final{padding:110px 0}
+  .final-card{
+    position:relative;overflow:hidden;
+    background:linear-gradient(135deg,var(--orange-500) 0%,var(--orange-700) 100%);
+    border-radius:40px;padding:80px 60px;text-align:center;color:#fff;
+    box-shadow:0 50px 100px -30px rgba(196,63,7,.5);
+  }
+  .final-card::before{
+    content:'';position:absolute;inset:0;
+    background:
+      radial-gradient(circle at 20% 30%,rgba(255,200,150,.3),transparent 40%),
+      radial-gradient(circle at 85% 70%,rgba(143,46,5,.4),transparent 45%);
+    pointer-events:none;
+  }
+  .final-card > *{position:relative}
+  .final-card h2{font-size:clamp(2rem,4.5vw,3.5rem);margin-bottom:18px;max-width:820px;margin-left:auto;margin-right:auto}
+  .final-card p{font-size:1.15rem;color:rgba(255,255,255,.9);max-width:640px;margin:0 auto 36px;line-height:1.55}
+  .final-card .btn-primary{background:#fff;color:var(--ink);box-shadow:0 15px 40px rgba(0,0,0,.15)}
+  .final-card .btn-primary:hover{background:#0F0F0F;color:#fff;transform:translateY(-2px)}
+  .final-risk{margin-top:22px;font-size:.92rem;color:rgba(255,255,255,.8)}
+  @media (max-width:640px){.final-card{padding:56px 28px;border-radius:28px}}
+
+  /* ---------- FOOTER ---------- */
+  footer{padding:60px 0 36px;background:var(--bg);border-top:1px solid var(--border)}
+  .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:48px}
+  .footer-about{max-width:360px}
+  .footer-about .logo{margin-bottom:16px}
+  .footer-about p{color:var(--ink-3);font-size:.95rem;line-height:1.6}
+  .footer-col h4{font-family:'Inter',sans-serif;font-size:.82rem;font-weight:700;color:var(--ink-4);letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px}
+  .footer-col a,.footer-col p{display:block;font-size:.95rem;color:var(--ink-2);padding:4px 0;transition:color .2s}
+  .footer-col a:hover{color:var(--orange-600)}
+  .footer-bottom{
+    display:flex;justify-content:space-between;align-items:center;padding-top:24px;
+    border-top:1px solid var(--border);font-size:.87rem;color:var(--ink-4);flex-wrap:wrap;gap:12px;
+  }
+  @media (max-width:720px){.footer-grid{grid-template-columns:1fr 1fr}.footer-about{grid-column:1/-1}}
+
+  /* WhatsApp float */
+  .wa-float{
+    position:fixed;bottom:20px;right:20px;z-index:40;
+    width:58px;height:58px;border-radius:50%;background:#25D366;color:#fff;
+    display:grid;place-items:center;box-shadow:0 10px 30px rgba(37,211,102,.4);
+    transition:transform .2s;
+  }
+  .wa-float:hover{transform:scale(1.08)}
+  .wa-float svg{width:30px;height:30px}
+
+  /* reduce motion */
+  @media (prefers-reduced-motion:reduce){
+    *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo" aria-label="AURAH">
+      <span class="logo-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 20 L12 4 L20 20 Z M9 16 L15 16" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/></svg>
+      </span>
+      <span>AURAH</span>
+    </a>
+    <div class="nav-links">
+      <a href="#metodo">Método</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#porque">Por que a AURAH</a>
+      <a href="#fundador">Fundador</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a href="https://wa.me/5511984058674?text=Oi%20AURAH%2C%20quero%20saber%20mais" class="nav-cta" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-1.9-1-3.2-1.8-4.5-4-.3-.6.3-.5.9-1.7.1-.2.1-.4 0-.6-.1-.2-.7-1.7-.9-2.3-.3-.6-.5-.5-.7-.5H7c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7 0 1.6 1.2 3.1 1.3 3.3.2.2 2.3 3.5 5.6 4.9.8.4 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.8-.7 2.1-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.7-.5zM12 2A10 10 0 0 0 2 12a10 10 0 0 0 1.5 5.2L2 22l4.9-1.5A10 10 0 1 0 12 2zm0 18.3a8.2 8.2 0 0 1-4.3-1.2l-.3-.2-3 .9.9-2.9-.2-.3A8.3 8.3 0 1 1 12 20.3z"/></svg>
+      <span class="cta-long">Falar no WhatsApp</span>
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Agência de Marketing Digital · Atuação Nacional</span>
+      <h1 style="margin-top:18px">O nosso negócio é <span class="accent">impulsionar o seu.</span></h1>
+      <p class="hero-sub">Estratégia, posicionamento e crescimento para PMEs, varejo e franquias que estão prontos para vender mais pelo digital. Não entregamos posts — entregamos resultado mensurável.</p>
+      <div class="hero-ctas">
+        <a href="https://wa.me/5511984058674?text=Oi%20AURAH%2C%20quero%20uma%20an%C3%A1lise%20do%20meu%20neg%C3%B3cio" class="btn btn-primary" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-1.9-1-3.2-1.8-4.5-4-.3-.6.3-.5.9-1.7.1-.2.1-.4 0-.6-.1-.2-.7-1.7-.9-2.3-.3-.6-.5-.5-.7-.5H7c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7 0 1.6 1.2 3.1 1.3 3.3.2.2 2.3 3.5 5.6 4.9.8.4 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.8-.7 2.1-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.7-.5zM12 2A10 10 0 0 0 2 12a10 10 0 0 0 1.5 5.2L2 22l4.9-1.5A10 10 0 1 0 12 2z"/></svg>
+          Quero uma análise gratuita
+        </a>
+        <a href="#metodo" class="btn btn-ghost">Ver como trabalhamos</a>
+      </div>
+      <div class="hero-trust">
+        <span class="hero-trust-item">Atendimento em todo o Brasil</span>
+        <span class="hero-trust-item">Operação enxuta</span>
+        <span class="hero-trust-item">Estratégia personalizada</span>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-card">
+        <svg class="hero-card-logo" viewBox="0 0 200 200" fill="none">
+          <path d="M100 30 L170 170 L130 170 L115 140 L85 140 L70 170 L30 170 Z" fill="#fff"/>
+          <path d="M95 115 L105 115 L100 95 Z" fill="#F25A0B"/>
+        </svg>
+        <div class="hero-card-brand">
+          <div class="name">AURAH</div>
+          <div class="tag">Marketing & Vendas</div>
+        </div>
+      </div>
+      <div class="hero-badge hero-badge-1">
+        <div class="hero-badge-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M17 7h4v4"/></svg>
+        </div>
+        <div>ROI real<span class="sub">Não vaidade</span></div>
+      </div>
+      <div class="hero-badge hero-badge-2">
+        <div class="hero-badge-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8 5.8 21.3l2.4-7.4L2 9.4h7.6z"/></svg>
+        </div>
+        <div>Estratégia 1:1<span class="sub">Nada genérico</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<section class="strip">
+  <div class="container strip-inner">
+    <span class="strip-label">Onde a AURAH atua</span>
+    <div class="strip-logos">
+      <span class="strip-logo"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2 0 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.9.9 1.4.1.4.3 1 .4 2.2 0 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c0 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.9.7-1.4.9-.4.1-1 .3-2.2.4-1.2 0-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2 0-1.8-.3-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.9-.9-1.4-.1-.4-.3-1-.4-2.2 0-1.2-.1-1.6-.1-4.8s0-3.6.1-4.8c0-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.9-.7 1.4-.9.4-.1 1-.3 2.2-.4 1.2 0 1.6-.1 4.8-.1zm0 2c-3.2 0-3.5 0-4.7.1-1.1 0-1.7.2-2.1.4-.5.2-.9.4-1.3.8-.4.4-.6.8-.8 1.3-.2.4-.4 1-.4 2.1 0 1.2-.1 1.5-.1 4.7s0 3.5.1 4.7c0 1.1.2 1.7.4 2.1.2.5.4.9.8 1.3.4.4.8.6 1.3.8.4.2 1 .4 2.1.4 1.2 0 1.5.1 4.7.1s3.5 0 4.7-.1c1.1 0 1.7-.2 2.1-.4.5-.2.9-.4 1.3-.8.4-.4.6-.8.8-1.3.2-.4.4-1 .4-2.1 0-1.2.1-1.5.1-4.7s0-3.5-.1-4.7c0-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.3-.4-.4-.8-.6-1.3-.8-.4-.2-1-.4-2.1-.4-1.2 0-1.5-.1-4.7-.1zm0 3.4A4.4 4.4 0 1 1 7.6 12 4.4 4.4 0 0 1 12 7.6zm0 7.3A2.9 2.9 0 1 0 9.1 12 2.9 2.9 0 0 0 12 14.9zm5.6-7.5a1 1 0 1 1-1-1 1 1 0 0 1 1 1z"/></svg>Instagram</span>
+      <span class="strip-logo"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7h-2.5V12h2.5V9.8c0-2.5 1.5-3.9 3.7-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg>Facebook</span>
+      <span class="strip-logo"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.6 6.6a4.8 4.8 0 0 1-3-1 4.7 4.7 0 0 1-1.4-2.3h-3v13a2.7 2.7 0 1 1-2.7-2.7c.2 0 .5 0 .7.1V10.6a5.7 5.7 0 0 0-.7 0 5.7 5.7 0 1 0 5.7 5.7V9.4a7.7 7.7 0 0 0 4.4 1.4z"/></svg>TikTok</span>
+      <span class="strip-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"/></svg>Meta Ads</span>
+      <span class="strip-logo"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.8 10.2h-9.6v3.7h5.5c-.2 1.3-1.7 3.9-5.5 3.9a6 6 0 1 1 3.8-10.6l2.6-2.5A9.7 9.7 0 1 0 12 21.8c5.6 0 9.4-3.9 9.4-9.5a10 10 0 0 0-.2-2.1z"/></svg>Google Ads</span>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN -->
+<section class="pain">
+  <div class="container pain-inner">
+    <span class="eyebrow">O problema</span>
+    <h2>Presença digital sem resultado é <span class="strike">marketing</span> custo.</h2>
+    <p>A maioria das agências entrega <strong>volume</strong>. Poucas entregam <strong>estratégia</strong>. A AURAH nasceu justamente da frustração com esse padrão: reuniões iniciais recheadas de promessa, e depois do contrato assinado, ninguém mais atende o telefone.</p>
+    <p>Aqui, cada decisão — sobre conteúdo, anúncios, posicionamento — começa com uma pergunta simples: <em>isso vai gerar resultado para o cliente?</em> Se a resposta não é sim, não fazemos. É por isso que trabalhamos com menos clientes e entregamos mais atenção.</p>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section class="method" id="metodo">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">O método AURAH</span>
+      <h2>Quatro passos, zero improviso.</h2>
+      <p>Nada de pacote genérico. Todo cliente passa pela mesma estrutura — porque é ela que garante que nenhum post, nenhum real em anúncio e nenhum relatório saia sem objetivo claro de negócio.</p>
+    </div>
+    <div class="method-grid">
+      <div class="method-card">
+        <div class="method-num">01 · DIAGNÓSTICO</div>
+        <h3>Entender antes de executar.</h3>
+        <p>Mergulhamos no seu negócio, público e concorrência. Identificamos onde o dinheiro está escapando e onde está a maior oportunidade de crescimento.</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">02 · ESTRATÉGIA</div>
+        <h3>Plano com objetivo claro.</h3>
+        <p>Construímos um plano personalizado — editorial, campanhas, posicionamento — com metas de negócio por trás de cada ação. Nada de "postar por postar".</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">03 · EXECUÇÃO</div>
+        <h3>Feito com atenção real.</h3>
+        <p>Conteúdo, artes, campanhas e otimizações rodam dentro de casa. Você fala direto com quem está mexendo na sua operação — sem intermediário, sem "vou verificar".</p>
+      </div>
+      <div class="method-card">
+        <div class="method-num">04 · OTIMIZAÇÃO</div>
+        <h3>Ajuste semanal com dados.</h3>
+        <p>Cada semana rodamos revisão de performance e ajustamos rota. Você recebe relatório mensal com o que funcionou, o que não funcionou e o que vem a seguir.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="servicos">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Serviços</span>
+      <h2>Duas frentes, um objetivo: vender mais.</h2>
+      <p>Trabalhamos em duas especialidades complementares. Separadas funcionam. Juntas aceleram.</p>
+    </div>
+    <div class="services-grid">
+      <article class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        </div>
+        <h3>Gestão de Redes Sociais</h3>
+        <p>Instagram, Facebook e TikTok com conteúdo que fala com o público certo — e que gera conversa, não só curtida.</p>
+        <ul class="service-list">
+          <li class="service-bullet">Planejamento editorial mensal alinhado ao objetivo do negócio</li>
+          <li class="service-bullet">Produção de artes, textos e legendas otimizadas para engajamento</li>
+          <li class="service-bullet">Gestão de comunidade: respostas, interações e monitoramento da conta</li>
+          <li class="service-bullet">Relatórios mensais com dados reais e próximos passos</li>
+        </ul>
+        <div class="service-chips">
+          <span class="service-chip">Instagram</span>
+          <span class="service-chip">Facebook</span>
+          <span class="service-chip">TikTok</span>
+        </div>
+      </article>
+      <article class="service-card dark">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/><circle cx="19" cy="7" r="1.5" fill="currentColor"/></svg>
+        </div>
+        <h3>Tráfego Pago</h3>
+        <p>Meta, TikTok e Google Ads geridos com transparência total. Cada real investido chega na pessoa certa, na hora certa.</p>
+        <ul class="service-list">
+          <li class="service-bullet">Criação de campanhas: segmentação, anúncios e configuração completa</li>
+          <li class="service-bullet">Otimização contínua com ajustes semanais baseados em performance real</li>
+          <li class="service-bullet">Gestão de verba com transparência — você vê exatamente onde o dinheiro vai</li>
+          <li class="service-bullet">Relatórios de ROAS, alcance, conversões e recomendações</li>
+        </ul>
+        <div class="service-chips">
+          <span class="service-chip">Meta Ads</span>
+          <span class="service-chip">TikTok Ads</span>
+          <span class="service-chip">Google Ads</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENTIATORS -->
+<section class="diff" id="porque">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Por que a AURAH</span>
+      <h2>Cinco compromissos que mudam a conversa.</h2>
+      <p>A gente não inventou o marketing. Só resolveu fazer do jeito que todo empreendedor já gostaria que fosse feito.</p>
+    </div>
+    <div class="diff-grid">
+      <div class="diff-item">
+        <div class="diff-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></div>
+        <div>
+          <h3>Resultado acima de presença</h3>
+          <p>Não entregamos posts por entregar. Cada ação tem um objetivo de negócio claro por trás.</p>
+        </div>
+      </div>
+      <div class="diff-item">
+        <div class="diff-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></div>
+        <div>
+          <h3>Parceria, não fornecimento</h3>
+          <p>Acesso direto, resposta rápida e acompanhamento real — antes, durante e depois de cada entrega.</p>
+        </div>
+      </div>
+      <div class="diff-item">
+        <div class="diff-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></div>
+        <div>
+          <h3>Transparência total</h3>
+          <p>Você sabe exatamente o que está sendo feito, por quê, e o que está gerando retorno de verdade.</p>
+        </div>
+      </div>
+      <div class="diff-item">
+        <div class="diff-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></div>
+        <div>
+          <h3>Estratégia personalizada</h3>
+          <p>Nada de pacote genérico. O plano é construído para o seu negócio específico, não para "um cliente médio".</p>
+        </div>
+      </div>
+      <div class="diff-item">
+        <div class="diff-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></div>
+        <div>
+          <h3>Operação enxuta e dedicada</h3>
+          <p>Menos clientes, mais atenção. Escolhemos trabalhar com quem queremos crescer junto no longo prazo.</p>
+        </div>
+      </div>
+      <div class="diff-item">
+        <div class="diff-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></div>
+        <div>
+          <h3>Honestidade acima de venda</h3>
+          <p>Se o seu caso não é pra gente, a gente fala. Não fechamos contrato que não faz sentido só pra bater meta.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR WHOM -->
+<section class="forwhom">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Para quem</span>
+      <h2>A AURAH é pra quem leva o próprio negócio a sério.</h2>
+      <p>Honestidade é um dos nossos pilares. Por isso, vale dizer antes: tem empresário que vai adorar trabalhar com a gente. Tem outro que não — e tudo bem.</p>
+    </div>
+    <div class="forwhom-grid">
+      <div class="forwhom-card yes">
+        <h3><span class="forwhom-icon y"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span> Combina com a AURAH se…</h3>
+        <ul class="forwhom-list">
+          <li>Você já tem um negócio funcionando e quer acelerar as vendas pelo digital.</li>
+          <li>Sabe que precisa de marketing sério, mas não tem tempo nem equipe para fazer internamente.</li>
+          <li>Já foi mal atendido por uma agência que prometeu na reunião e sumiu depois do contrato.</li>
+          <li>Busca um parceiro de longo prazo, não um fornecedor de posts.</li>
+          <li>Valoriza transparência, atenção real e resposta rápida.</li>
+        </ul>
+      </div>
+      <div class="forwhom-card">
+        <h3><span class="forwhom-icon n"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span> Provavelmente não é pra você se…</h3>
+        <ul class="forwhom-list">
+          <li>Você só quer "postar mais" ou "manter presença" sem objetivo claro.</li>
+          <li>Procura a agência mais barata do mercado, sem se importar com entrega.</li>
+          <li>Espera resultado em 7 dias, sem passar por diagnóstico e estratégia.</li>
+          <li>Não quer se envolver no processo e prefere não receber relatório nenhum.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDER -->
+<section class="founder" id="fundador">
+  <div class="container founder-grid">
+    <div class="founder-photo" aria-hidden="true"></div>
+    <div>
+      <span class="eyebrow">Fundador</span>
+      <h2>Raul Arruda</h2>
+      <p class="founder-quote">"Marketing que não gera resultado não é marketing — é despesa."</p>
+      <p>Raul é empreendedor, criador de conteúdo digital e fundador da AURAH. Construiu a agência a partir de um princípio simples: cada real investido em marketing precisa voltar em forma de venda, reputação ou aprendizado — e se não volta, o problema é nosso, não do cliente.</p>
+      <p>No dia a dia, documenta rotina, estratégia e mentalidade de negócios nas suas redes. É a mesma cultura que rege a AURAH: autenticidade, consistência e resultado concreto acima de aparência.</p>
+      <span class="founder-name">Raul Arruda · Fundador, AURAH Marketing &amp; Vendas</span>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container faq-wrap">
+    <div class="section-head">
+      <span class="eyebrow">Perguntas frequentes</span>
+      <h2>Antes de mandar mensagem, talvez a gente já tenha respondido.</h2>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">
+        <span>Quanto custa trabalhar com a AURAH?</span>
+        <span class="faq-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+      </button>
+      <div class="faq-a"><p>Depende do escopo — não trabalhamos com pacote fechado. Depois do diagnóstico inicial (gratuito) a gente manda uma proposta com valor fixo mensal, sem pegadinha. Nosso ticket mínimo fica em torno do investimento de uma agência séria de médio porte: a gente prefere falar isso antes de você perder tempo.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">
+        <span>Em quanto tempo eu vejo resultado?</span>
+        <span class="faq-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+      </button>
+      <div class="faq-a"><p>Tráfego pago começa a trazer leads/vendas nas primeiras semanas de campanha, desde que haja verba e oferta certa. Trabalho de conteúdo orgânico matura entre 60 e 90 dias. A AURAH não promete resultado imediato — promete que, se a estratégia estiver errada, a gente ajusta antes do mês fechar.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">
+        <span>Vocês substituem o meu time interno?</span>
+        <span class="faq-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+      </button>
+      <div class="faq-a"><p>Não. A gente estende o que seu time já faz — entrando nas frentes de estratégia, conteúdo e mídia paga que você não quer (ou não tem tempo) de cobrir internamente. Quando faz sentido, treinamos o time interno junto.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">
+        <span>Com que tipo de negócio vocês trabalham?</span>
+        <span class="faq-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+      </button>
+      <div class="faq-a"><p>Foco principal em PMEs, varejo, franquias e empreendedores com operação rodando — B2C e B2B. Atendemos em todo o Brasil de forma remota. Se sua empresa ainda não vendeu para ninguém, o momento é de validar produto, não de contratar agência. A gente fala isso sem problema.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">
+        <span>Como funciona o primeiro contato?</span>
+        <span class="faq-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+      </button>
+      <div class="faq-a"><p>Você manda mensagem no WhatsApp. Em até 24h, um dos sócios responde. Marcamos uma conversa curta (30 minutos), sem pitch: a gente escuta seu negócio. Se fizer sentido, seguimos para o diagnóstico; se não fizer, apontamos caminho. Sem compromisso.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">
+        <span>Preciso assinar contrato de 12 meses?</span>
+        <span class="faq-toggle" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+      </button>
+      <div class="faq-a"><p>Não. Trabalhamos mês a mês, com aviso prévio curto. Se a AURAH não está gerando valor, você sai — e a gente prefere assim. Ficar preso em contrato longo é do modelo antigo de agência.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="container">
+    <div class="final-card">
+      <h2>Sua presença digital está gerando venda — ou só custo?</h2>
+      <p>Em até 24 horas, você conversa direto com a gente pelo WhatsApp. A gente escuta seu negócio. Se fizer sentido, fechamos. Se não fizer, apontamos caminho. Sem pitch, sem enrolação.</p>
+      <a href="https://wa.me/5511984058674?text=Oi%20AURAH%2C%20quero%20uma%20an%C3%A1lise%20do%20meu%20neg%C3%B3cio" class="btn btn-primary" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-1.9-1-3.2-1.8-4.5-4-.3-.6.3-.5.9-1.7.1-.2.1-.4 0-.6-.1-.2-.7-1.7-.9-2.3-.3-.6-.5-.5-.7-.5H7c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7 0 1.6 1.2 3.1 1.3 3.3.2.2 2.3 3.5 5.6 4.9.8.4 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.8-.7 2.1-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.7-.5zM12 2A10 10 0 0 0 2 12a10 10 0 0 0 1.5 5.2L2 22l4.9-1.5A10 10 0 1 0 12 2z"/></svg>
+        Falar no WhatsApp agora
+      </a>
+      <p class="final-risk">🔒 Resposta em até 24h por um dos sócios — sem robô, sem formulário gigante.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <div class="logo">
+          <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20 L12 4 L20 20 Z M9 16 L15 16" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/></svg></span>
+          <span>AURAH</span>
+        </div>
+        <p>Estratégia, posicionamento e crescimento para quem não quer só estar online — quer vender. Marketing que não gera resultado é despesa; a AURAH transforma presença em venda.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegar</h4>
+        <a href="#metodo">Método</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#porque">Diferenciais</a>
+        <a href="#fundador">Fundador</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <a href="https://wa.me/5511984058674" target="_blank" rel="noopener">WhatsApp · +55 11 98405-8674</a>
+        <a href="mailto:aurah.mktdigital@gmail.com">aurah.mktdigital@gmail.com</a>
+        <a href="https://instagram.com/aurah.co" target="_blank" rel="noopener">Instagram · @aurah.co</a>
+        <p>Atuação em todo o Brasil</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 AURAH · Marketing &amp; Vendas. Todos os direitos reservados.</span>
+      <span>Feito com foco em resultado.</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/5511984058674?text=Oi%20AURAH" class="wa-float" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-1.9-1-3.2-1.8-4.5-4-.3-.6.3-.5.9-1.7.1-.2.1-.4 0-.6-.1-.2-.7-1.7-.9-2.3-.3-.6-.5-.5-.7-.5H7c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7 0 1.6 1.2 3.1 1.3 3.3.2.2 2.3 3.5 5.6 4.9.8.4 1.4.5 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.8-.7 2.1-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.7-.5zM12 2A10 10 0 0 0 2 12a10 10 0 0 0 1.5 5.2L2 22l4.9-1.5A10 10 0 1 0 12 2zm0 18.3a8.2 8.2 0 0 1-4.3-1.2l-.3-.2-3 .9.9-2.9-.2-.3A8.3 8.3 0 1 1 12 20.3z"/></svg>
+</a>
+
+<script>
+  // Nav scroll state
+  const nav=document.getElementById('nav');
+  window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>20)},{passive:true});
+
+  // FAQ toggle
+  document.querySelectorAll('.faq-item').forEach(item=>{
+    const btn=item.querySelector('.faq-q');
+    btn.addEventListener('click',()=>{
+      const open=item.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open);
+    });
+  });
+</script>
+</body>
+</html>
